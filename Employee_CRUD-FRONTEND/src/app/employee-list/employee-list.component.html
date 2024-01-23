@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Angular CRUD Operation</title>
+    <!-- Add Bootstrap CSS link -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <style></style>
+  </head>
+
+  <body>
+    <h1 class="text-center">EMPLOYEE MANAGEMENT</h1>
+
+    <table class="table table-striped">
+      <thead>
+        <td>
+          <button class="btn btn-add" (click)="logins()">ADD EMPLOYEE</button>
+        </td>
+        <tr>
+          <th>Sr no</th>
+          
+          <th>Employee Name</th>
+          <th>Password</th>
+          <th>Role ID</th>
+          <th>Role Name</th>
+          <th>Feature ID</th>
+          <th>Feature Name</th>
+          <th>Department ID</th>
+          <th>Department No</th>
+          <th>passportImg</th>
+          <th colspan="3">Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let emp of employees; let i = index">
+          <td> {{i + 1}}</td>
+          <td>{{ emp.empName }}</td>
+          <td>{{ emp.pass }}</td>
+          <td>{{ emp.role.roleId }}</td>
+          <td>{{ emp.role.roleName }}</td>
+          <td>{{ emp.role.feature.featureId }}</td>
+          <td>{{ emp.role.feature.featureName }}</td>
+          <td>{{ emp.department.deptId }}</td>
+          <td>{{ emp.department.departmentNo }}</td>
+          <td>
+            <img
+              src="data:image/jpeg;base64,{{emp.passportImg}}"
+              alt="Passport Image"
+              style="height: 1in; width: 1in; border-radius: 10%; border: 2px solid #e0d9d9; object-fit: cover;"
+            />
+          </td>
+
+
+          <td>
+            <button
+              type="button"
+              class="btn btn-view"
+              (click)="views(emp.empid)"
+            >
+              View
+            </button>
+          </td>
+          <td>
+            <button
+              type="button"
+              class="btn btn-edit"
+              (click)="updateEmloyee(emp.empid)"
+            >
+              Edit
+            </button>
+          </td>
+          <td>
+            <button
+              type="button"
+              class="btn btn-delete"
+              (click)="deleteEmployee(emp.empid)"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- <img [src]="data" alt="not found"/> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>

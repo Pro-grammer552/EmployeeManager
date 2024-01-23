@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<div class = 'background'>
+  <section class="vh-100">
+    <div class="container-fluid">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-sm-6 text-center">
+
+                <div class="d-flex align-items-center flex-column h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
+
+                  <div class="login">
+                      <form [formGroup]="credentials" (ngSubmit)="onSubmit()" style="width: 23rem;">
+
+                        <img class="img-fluid" style="max-width: 100%" src="/assets/loginIcon.png" alt="Login Icon" />
+                        <h1>Login Here !!</h1>
+
+                        <div class="form-outline mb-3">
+                            <input type="email" id="form2Example18" formControlName="username" name="username" class="form-control form-control-lg" placeholder="Enter your email" />
+                            <!-- <label class="form-label" for="form2Example18">Email address</label> -->
+                        </div>
+
+                        <div class="form-outline mb-3">
+                            <input type="password" formControlName="password" name="password" id="form2Example28" class="form-control form-control-lg" placeholder="Enter your password" />
+                            <!-- <label class="form-label" for="form2Example28">Password</label> -->
+                        </div>
+
+                        <div class="pt-1 mb-4">
+                            <button class="btn btn-info btn-lg btn-block" type="submit">Login</button>
+                        </div>
+
+                        <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></p>
+                        <p>Don't have an account? <a href="/Registration" class="link-info">Register here</a></p>
+
+                    </form>
+                  </div>
+
+                  
+                    <!-- <p class="mt">Username: {{ credentials.get('username').value }}, Password: {{ credentials.get('password').value }}</p> -->
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+

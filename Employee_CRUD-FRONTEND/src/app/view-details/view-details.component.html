@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Your Table Page</title>
+</head>
+
+<body>
+    <div class="container mt-4">
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+
+                    <th>Employee Name</th>
+                    <th>Password</th>
+                    <th>Role ID</th>
+                    <th>Role Name</th>
+                    <th>Feature ID</th>
+                    <th>Feature Name</th>
+                    <th>Department ID</th>
+                    <th>Department No</th>
+                    <th>passportImg</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let emp of employee">
+
+                    <td>{{ emp.empName }}</td>
+                    <td>{{ emp.pass }}</td>
+                    <td>{{ emp.role.roleId }}</td>
+                    <td>{{ emp.role.roleName }}</td>
+                    <td>{{ emp.role.feature.featureId }}</td>
+                    <td>{{ emp.role.feature.featureName }}</td>
+                    <td>{{ emp.department.deptId }}</td>
+                    <td>{{ emp.department.departmentNo }}</td>
+                    <td>
+                      <img [src]="'data:image/jpeg;base64,' + emp.passportPic" alt="Passport Image" [width]="100" [height]="100" />
+                      </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div>
+            <button (click)="goBack()" class="btn btn-dark">BACK</button>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+body{
+background-image: url('/assets/employee.jpg');
+      height: 100vh;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+}
+.container{
+  background-color: #e5dfba;
+  border-radius: 30px;
+  align-items: center;
+  padding: 80px;
+  padding-right: 40px;
+  margin-left: 50px;
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <title>Registration Form</title>
+</head>
+
+<body>
+
+
+  <div class="container" >
+    <form class="form-horizontal" role="form" [formGroup]="RegisterForm" (ngSubmit)="onSubmit()">
+      <h2 class="text-center"
+        style="font-size: 70px; color: #3db3e6; font-family: 'Arial', sans-serif; font-weight: bold; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
+        Register</h2>
+      <h2 class="text-center"
+        style="font-size: 50px; color: #65aacf; font-family: 'Arial', sans-serif; font-weight: bold; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
+        Here!!</h2>
+
+      <div class="form-group" *ngIf="RegisterForm">
+        <label for="name" class="col-sm-3 control-label">Name</label>
+        <div class="col-sm-9">
+          <input type="text" id="name" placeholder="Name" class="form-control" formControlName="empName" autofocus>
+          <div *ngIf="RegisterForm.get('empName').invalid && (RegisterForm.get('empName').dirty || RegisterForm.get('empName').touched)">
+            <div *ngIf="RegisterForm.get('empName').hasError('required')" class="text-danger">Name is required.</div>
+          </div>
+
+        </div>
+      </div>
+
+
+
+      <div class="form-group" *ngIf="RegisterForm">
+        <label for="password" class="col-sm-3 control-label">Password</label>
+        <div class="col-sm-9">
+          <input type="password" id="password" placeholder="Password" class="form-control" formControlName="pass">
+        </div>
+      </div>
+
+
+
+      <div class="form-group" *ngIf="RegisterForm">
+        <label for="ROLE" class="col-sm-3 control-label">ROLE</label>
+        <div class="col-sm-9">
+          <select id="ROLE" class="form-control" formControlName="roleId">
+            <option value="1">ADMIN</option>
+            <option value="2">USER</option>
+            <option value="3">OPERATION</option>
+          </select>
+        </div>
+      </div>
+
+
+      <div class="form-group" *ngIf="RegisterForm">
+        <label for="DEPARTMENT" class="col-sm-3 control-label">DEPARTMENT</label>
+        <div class="col-sm-9">
+          <select id="DEPARTMENT" class="form-control" formControlName="deptId">
+            <option value="1">ADMIN</option>
+            <option value="2">IT</option>
+            <option value="3">OPERATION</option>
+          </select>
+        </div>
+      </div>
+
+
+
+
+
+      <div class="form-group" *ngIf="RegisterForm">
+        <label for="passportImg" class="col-sm-3 control-label">Add Image</label>
+        <div class="col-sm-9">
+          <input type="file" id="passportImg" class="form-control-file"  (change)="onFileChange($event)">
+ <small class="form-text text-muted">Choose a file to upload</small>
+        </div>
+      </div>
+
+
+
+      <button type="submit" [disabled]="!RegisterForm.valid" class="btn btn-primary" >Submit</button>
+      
+    </form>
+  </div>
+
+</body>
+
+</html>

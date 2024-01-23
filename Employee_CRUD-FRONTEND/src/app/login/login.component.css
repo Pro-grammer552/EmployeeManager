@@ -1,0 +1,37 @@
+.form-label {
+    margin-bottom: -0.5rem;
+}
+
+
+/* Add this CSS to your stylesheet or in a style tag in the head of your HTML document */
+
+/* Style for placeholders */
+.form-control::placeholder {
+    color: #6c757d; /* Placeholder text color */
+    font-style: italic; /* Italicize the placeholder text */
+    font-size: 0.50rem;
+}
+
+/* Style for focused placeholders */
+.form-control:focus::placeholder {
+    color: #007bff; /* Placeholder text color when input is focused */
+    font-style: normal; /* Set to normal when input is focused */
+}
+.background{
+  background-image: url('/assets/background.jpg');
+      height: 100vh;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+}
+.login{
+  background-color: rgb(223, 223, 220);
+  border: 5px;
+  border-radius: 30px;
+  padding: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 5, 5);
+}
